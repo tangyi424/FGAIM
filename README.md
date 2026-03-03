@@ -36,8 +36,12 @@ You can find the code for feature generation in the `./feature/` directory.
 ## Training
 To train a model, follow the steps below:
 
-1. Navigate to the `./main/` folder.
-2. Execute the following command to start a **5-fold cross-validation** training run:
+1. Navigate to the `./main/` directory
+2. Run `./main/data_process.py` to remove source data and generate a Y-matrix for labeling activation/inhibition mechanisms
+3. Run `./main/generate_contact_map.py` to generate contact maps for complete proteins
+4. Execute the following command to start a **5-fold cross-validation** training run:
+
+**Note**: The `./main/data_load.py` file is a critical component responsible for generating drug and protein graphs, as well as completing data encapsulation.
 
 ```bash
 python 5flod_cross_valid_parallel_train.py
